@@ -12,19 +12,21 @@
         </header>
         <main>
             <div id="content_header">
-                Word/letters entered: "{{inp}}"<br/><br/>
+                Word / letters entered: "{{inp}}"<br/><br/>
             </div>
             
-            <div id="content_body">
-                Found <span id="words_found">{{f}}</span> {{w}} are found<br/>
-                <div>
-                    <ol>
-                    {% if (f != 0) %}
-                        {% for i in anagrams %}
-                            <li>{{i}}</li>
-                        {% endfor %}
-                    {% endif %}
-                    </ol>
+            <div id="content_bo">
+                <div id="anagrams">
+                    Found <span id="words_found">{{f}}</span> {{w}} are found<br/>
+                    <div>
+                        <ol>
+                        {% if (f != 0) %}
+                            {% for i in anagrams %}
+                                <li>{{i}}</li>
+                            {% endfor %}
+                        {% endif %}
+                        </ol>
+                    </div>
                 </div>
             </div>
 

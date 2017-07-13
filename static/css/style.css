@@ -27,6 +27,7 @@ header {
     right: 0px;
     padding: 5px 20px;
     background: #333;
+    margin-bottom: 20px;
 }
 
 header a:link {
@@ -56,8 +57,13 @@ main {
 }
 
 #content_body {
-    margin: auto;
+    margin: 20 auto;
     text-align: center;
+}
+
+#anagrams {
+    padding-left: 30%;
+    text-align: left;
 }
 
 input[type=text] {
@@ -67,8 +73,7 @@ input[type=text] {
     width: 200px;
     border: 0px;
     border-radius: 3px;
-    padding: 5px 10px;
-    
+    padding: 5px 10px;    
 }
 
 input[type=submit], input[type=reset] {
@@ -90,11 +95,11 @@ input[type=submit], input[type=reset] {
 
 ol {
     color: orange;
-    text-align: center;
+    text-align: left;
 }
 
 li {
-    text-align: center;
+    text-align: left
 }
 
 footer {
