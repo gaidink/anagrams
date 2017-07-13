@@ -36,7 +36,7 @@ def results(f_anagrams=None, inp=None, f=None, w=None):
         w = "words"
     else:
         w = "word"
-    return render_template('results.html', anagrams=anagrams, inp=inp, f=f)
+    return render_template('results.html', anagrams=anagrams, inp=inp, f=f, w=w)
 
 
 if __name__ == '__main__':
