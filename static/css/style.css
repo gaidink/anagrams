@@ -1,5 +1,11 @@
 body {
-    text-align: center;
+    background: RGBA(238, 238, 238, 1.00);
+    font-size: 16px;
+}
+
+header {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 main {
@@ -11,6 +17,24 @@ input[type=number] {
     width: 50px;
 }
 
+input[type=submit], input[type=reset] {
+    cursor: pointer;
+    height: 20px;
+    width: 100px;
+}
+
+#words_found {
+    color: red;
+}
+
 ol {
-    color: yellow;
+    color: orange;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    right: 0px;
+    bottom: 0px;
 }

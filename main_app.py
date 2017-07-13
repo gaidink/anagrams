@@ -12,11 +12,12 @@ def index():
 
 
 @puzzle_app.route('/results', methods=['GET', 'POST'])
-def results(anagrams=None, k=None, inp=None, found=None):
+def results(f_anagrams=None, k=None, inp=None, found=None):
 
     en_US = enchant.Dict("en_US")
 
     anagrams = []
+    f_anagrams = []
     inp = str(request.form['word'])
     k = int(request.form['word_len'])
 
@@ -28,8 +29,12 @@ def results(anagrams=None, k=None, inp=None, found=None):
         for i in perm:
             if en_US.check(i) and (i != inp):
                 anagrams.append(i)
+    for i in anagrams:
+        if i not in f_anagrams:
+            f_anagrams.append(i[:])
+
     found = len(anagrams)
-    return render_template('results.html', anagrams=anagrams, k=k, inp=inp, found=found)
+    return render_template('results.html', f_anagrams=f_anagrams, k=k, inp=inp, found=found)
 
 
 if __name__ == '__main__':

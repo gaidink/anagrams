@@ -4,18 +4,22 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>results</title>
-        <link rel="stylesheets" href="{{url_for('static', filename="css/style.css")}}">
+        <link rel="stylesheet" href="{{url_for('static', filename="css/style.css")}}">
     </head>
     <body>
-        Word: {{inp}}<br/>
-        Number of letters: {{k}}<br/>
-        <br/>
-        {{found}} Found<br/>
-
+        <header>
+            <a href="/" target="_blank">Back to home</a>
+        </header>
+        Word entered: {{inp}}<br/><br/>
+        
+        <span id="words_found">{{found}}</span> words of {{k}} letters are found<br/>
         <ol>
-        {% for i in anagrams %}
+        {% for i in f_anagrams %}
             <li>{{i}}</li>
         {% endfor%}
-        </ol    
+        </ol>
+        <footer>
+            Created by Gaidink
+        </footer>
     </body>
 </html>
