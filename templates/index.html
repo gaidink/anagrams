@@ -4,22 +4,26 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-        <title></title>
+        <title>words generator</title>
     </head>
     <body>
         <header>
             <a href="/">Home</a>
         </header>
         <main>
+        <div id="content_header">
+            WORDS GENERATOR
+        </div>
+        <div id="content_body">
             <form action="{{url_for('results')}}" method="POST" accept-charset="utf-8">
-                Enter the word  <input type="text" name="word"><br/><br/>
-                Check for <input type="number" name="word_len"> letter words.<br/><br/>
-                <input type="submit" value="submit"><br/>
+                <input type="text" name="word" placeholder="Enter word / letters"><br/>
+                <input type="submit" value="Check"><br/>
                 <input type="reset">
             </form>
+        </div>
         </main>
         <footer>
-            created by Gaidink
+            <small>Created by Gaidink</small>
         </footer>
     </body>
 </html>

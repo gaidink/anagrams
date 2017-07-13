@@ -12,29 +12,31 @@ def index():
 
 
 @puzzle_app.route('/results', methods=['GET', 'POST'])
-def results(f_anagrams=None, k=None, inp=None, found=None):
+def results(f_anagrams=None, inp=None, f=None, w=None):
 
     en_US = enchant.Dict("en_US")
 
     anagrams = []
-    f_anagrams = []
-    inp = str(request.form['word'])
-    k = int(request.form['word_len'])
+    inp = str(request.form['word']).lower()
 
-    com = [''.join(x) for x in combinations(inp, k)]
+    i = 2
+    while (i <= (len(inp))):
+        com = [''.join(x) for x in combinations(inp, i)]
 
-    for i in com:
-        perm = [''.join(p) for p in permutations(list(i))]
+        for j in com:
+            perm = [''.join(p) for p in permutations(list(j))]
 
-        for i in perm:
-            if en_US.check(i) and (i != inp):
-                anagrams.append(i)
-    for i in anagrams:
-        if i not in f_anagrams:
-            f_anagrams.append(i[:])
+            for k in perm:
+                if en_US.check(k) and (k != inp) and (k not in anagrams):
+                    anagrams.append(k[:])
+        i += 1
 
-    found = len(anagrams)
-    return render_template('results.html', f_anagrams=f_anagrams, k=k, inp=inp, found=found)
+    f = len(anagrams)
+    if (f > 1):
+        w = "words"
+    else:
+        w = "word"
+    return render_template('results.html', anagrams=anagrams, inp=inp, f=f)
 
 
 if __name__ == '__main__':
