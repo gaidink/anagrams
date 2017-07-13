@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <strong>Get Anagrams</strong><br/>
+        </header>
+        <main>
+            <form action="{{url_for('results')}}" method="POST" accept-charset="utf-8">
+                Enter the word  <input type="text" name="word"><br/><br/>
+                Check for <input type="number" name="word_len"> letter words.<br/><br/>
+                <input type="submit" value="submit"><br/>
+                <input type="reset">
+            </form>
+        </main>
+        <footer>
+            created by Gaidink
+        </footer>
+    </body>
+</html>
