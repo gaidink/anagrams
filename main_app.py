@@ -33,9 +33,9 @@ def results(f_anagrams=None, inp=None, f=None, w=None):
 
     f = len(anagrams)
     if (f > 1):
-        w = "words"
+        w = "words are"
     else:
-        w = "word"
+        w = "word is"
     return render_template('results.html', anagrams=anagrams, inp=inp, f=f, w=w)
 
 
